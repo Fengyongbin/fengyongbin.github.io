@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"fengyongbin.github.io","root":"/","scheme":"Muse","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false};
   </script>
 
-  <meta name="description" content="字符串String String在JDK1.8和JDK1.9中底层有所不同，在JDK1.8中String底层是char数组并用final修饰，在JDK1.9中底层改为byte数组。直接用引号的字符串在堆的字符串常量池中，只创建一次内存地址相同。字符串不适合进行频繁拼接，可能会引起内存溢出。  StringBuffer Stringbuffer底层是一个初始容量为16的byte数组，他没有被fina">
+  <meta name="description" content="String String在JDK1.8和JDK1.9中底层有所不同，在JDK1.8中String底层是char数组并用final修饰，在JDK1.9中底层改为byte数组。直接用引号的字符串在堆的字符串常量池中，只创建一次内存地址相同。字符串不适合进行频繁拼接，可能会引起内存溢出。  StringBuffer Stringbuffer底层是一个初始容量为16的byte数组，他没有被final修饰">
 <meta property="og:type" content="article">
 <meta property="og:title" content="字符串">
 <meta property="og:url" content="https://fengyongbin.github.io/2020/08/01/%E5%AD%97%E7%AC%A6%E4%B8%B2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="字符串String String在JDK1.8和JDK1.9中底层有所不同，在JDK1.8中String底层是char数组并用final修饰，在JDK1.9中底层改为byte数组。直接用引号的字符串在堆的字符串常量池中，只创建一次内存地址相同。字符串不适合进行频繁拼接，可能会引起内存溢出。  StringBuffer Stringbuffer底层是一个初始容量为16的byte数组，他没有被fina">
+<meta property="og:description" content="String String在JDK1.8和JDK1.9中底层有所不同，在JDK1.8中String底层是char数组并用final修饰，在JDK1.9中底层改为byte数组。直接用引号的字符串在堆的字符串常量池中，只创建一次内存地址相同。字符串不适合进行频繁拼接，可能会引起内存溢出。  StringBuffer Stringbuffer底层是一个初始容量为16的byte数组，他没有被final修饰">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-01T03:32:36.883Z">
-<meta property="article:modified_time" content="2020-08-01T03:37:30.610Z">
+<meta property="article:modified_time" content="2020-08-01T03:39:44.334Z">
 <meta property="article:author" content="Fengyongbin">
 <meta name="twitter:card" content="summary">
 
@@ -148,7 +148,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#String"><span class="nav-number">1.1.</span> <span class="nav-text">String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StringBuffer"><span class="nav-number">1.2.</span> <span class="nav-text">StringBuffer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StringBuilder"><span class="nav-number">1.3.</span> <span class="nav-text">StringBuilder</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#String"><span class="nav-number">1.</span> <span class="nav-text">String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StringBuffer"><span class="nav-number">2.</span> <span class="nav-text">StringBuffer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StringBuilder"><span class="nav-number">3.</span> <span class="nav-text">StringBuilder</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -225,7 +225,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-08-01 11:32:36 / Modified: 11:37:30" itemprop="dateCreated datePublished" datetime="2020-08-01T11:32:36+08:00">2020-08-01</time>
+              <time title="Created: 2020-08-01 11:32:36 / Modified: 11:39:44" itemprop="dateCreated datePublished" datetime="2020-08-01T11:32:36+08:00">2020-08-01</time>
             </span>
 
           
@@ -237,7 +237,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><blockquote>
+        <h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><blockquote>
 <p>String在JDK1.8和JDK1.9中底层有所不同，在JDK1.8中String底层是char数组并用final修饰，在JDK1.9中底层改为byte数组。直接用引号的字符串在堆的字符串常量池中，只创建一次内存地址相同。字符串不适合进行频繁拼接，可能会引起内存溢出。</p>
 </blockquote>
 <h2 id="StringBuffer"><a href="#StringBuffer" class="headerlink" title="StringBuffer"></a>StringBuffer</h2><blockquote>
